@@ -22,7 +22,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: 'wght' var(--p-card-wght);
+  font-variation-settings: 'wght' var(--description-card-wght);
 }
 
 .header {
@@ -37,20 +37,24 @@
   align-items: center;
   gap: 20px;
   margin-top: 100px;
+  padding: 130px 0px;
   outline: 2px solid #000;
-  background-color: #fff;
+  background-color: var(--components-background-color);
   inline-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
-  block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
+
+  @media (width < 376px) {
+    padding: 122px 0px;
+  }
 }
 
 .title {
-  font-family: 'PressStart2P';
+  font-family: var(--accent-font-family), fantasy;
   font-size: clamp(3.063rem, 2.71rem + 1.502vi, 4.063rem);
   text-transform: uppercase;
 }
 
 .title_description {
-  font-family: 'PressStart2P';
+  font-family: var(--accent-font-family), fantasy;
   font-size: clamp(0.875rem, 0.677rem + 0.845vi, 1.438rem);
   text-transform: uppercase;
 }
@@ -70,19 +74,22 @@
 }
 
 .card {
-  border: 2px solid #000;
-  background-color: #fff;
+  border: 2px solid var(--border-color);
+  background-color: var(--components-background-color);
   inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 }
 
 .card__title {
   padding: 4px 10px;
   font-size: 18px;
-  font-variation-settings: 'wght' var(--h3-card-wght);
+  font-variation-settings: 'wght' var(--title-card-wght);
 }
 
 .card__image {
-  position: relative;
+  position: relative;  
+  border-top: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  font-size: 0;
 }
 
 .hellokit {
@@ -119,8 +126,6 @@
 
 .image {
   width: 100%;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
   object-fit: cover;
   aspect-ratio: 1 / 1;
 }
@@ -130,7 +135,7 @@
   top: 25px;
   right: 25px;
   opacity: 0.5;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   text-shadow: 
     1px 1px 0 var(--stroke-color),
@@ -150,7 +155,7 @@
 
 .card__description p {
   font-size: 18px;
-  font-variation-settings: 'wght' var(--p-card-wght);
+  font-variation-settings: 'wght' var(--description-card-wght);
 }
 
 .card__buttons {
@@ -191,15 +196,23 @@
   transition: fill 0.3s linear 0s;
 }
 
-.like-icon:hover .core,
-.like-icon:active .core {
+.like-icon:hover .core {
   fill: var(--contour-color);
   transition: fill 0.3s linear 0s;
 }
 
-.like-icon:hover .main-body,
-.like-icon:active .main-body {
+.like-icon:active .core {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear 0s;
+}
+
+.like-icon:hover .main-body {
   fill: var(--contour-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-fill-color);
   transition: fill 0.3s linear 0.05s;
 }
 
@@ -236,14 +249,14 @@
 }
 
 .card__icon-button:focus-visible {
-  border-color: #000;
+  border-color: var(--border-color);
 }
 
 .def-button {
   position: relative;
-  border: 2px solid #000;
+  border: 2px solid var(--border-color);
   overflow: hidden;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   line-height: 90%;
   text-align: center;
@@ -269,6 +282,11 @@
   transform: translateX(0);
 }
 
+.def-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--button-shadow-color);
+  outline: none;
+}
+
 .button__text {
   position: relative;
   z-index: 2;
@@ -279,11 +297,6 @@
 .card__like-button {
   width: 130px;
   height: 38px;
-}
-
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px 0 #000;
-  outline: none;
 }
 
 .save_button {
@@ -302,11 +315,6 @@
     width: 306px;
     height: 84px;
   }
-}
-
-.save_button:focus-visible {
-  box-shadow: 2px 2px 0 #000;
-  outline: none;
 }
 
 .save_button .floppy {
@@ -333,7 +341,6 @@
   justify-content: center;
   align-items: center;
   width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
-  height: 191px;
   padding: 30px;
 }
 
@@ -358,7 +365,7 @@
 }
 
 .save_dialog__description {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   line-height: 150%;
 }
@@ -367,11 +374,6 @@
   width: 100%;
   height: 38px;
   margin-top: 30px;
-}
-
-.save_dialog__close-button:focus-visible {
-  box-shadow: 2px 2px 0 #000;
-  outline: none;
 }
 
 .save_dialog__close-button span {

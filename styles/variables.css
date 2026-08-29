@@ -2,8 +2,8 @@
 :root {
   --main-font-family: 'Inter-Variable';
   --accent-font-family: 'PressStart2P';
-  --h3-card-wght: 715;
-  --p-card-wght: 410; 
+  --title-card-wght: 715;
+  --description-card-wght: 410; 
   --stroke-color: #fff;
 
   --button-text-color: #fff;
@@ -12,4 +12,8 @@
 
   --contour-color: #000;
   --heart-fill-color: #ff0000;
+
+  --border-color: #000;
+  --button-shadow-color: #000;
+  --components-background-color: #fff;
 }
