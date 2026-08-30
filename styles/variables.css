@@ -4,8 +4,8 @@
   --accent-font-family: 'PressStart2P';
   --title-card-wght: 715;
   --description-card-wght: 410; 
-  --stroke-color: #fff;
 
+  --stroke-color: #fff;
   --button-text-color: #fff;
   --button-bg-color: #fff;
   --button-hover-color: #000;
@@ -16,4 +16,9 @@
   --border-color: #000;
   --button-shadow-color: #000;
   --components-background-color: #fff;
+
+  --page-bg-color: #fff;
+  --background-gradient: repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7, #1a1a1a);
 }
